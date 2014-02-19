@@ -89,7 +89,7 @@ function webform_custom_buttons_form_form_builder_webform_save_form_alter(&$form
     '#description'   => t('This button appears on all other (neither first nor last) pages of a multi-page form. Click to change the label!'),
   ) + $common;
 
-  $form['#submit'][] = 'webform_custom_buttons_webform_save_form_submit';
+  array_unshift($form['#submit'], 'webform_custom_buttons_webform_save_form_submit');
   return $form;
 }
 
